@@ -1,0 +1,10 @@
+{
+  "workbench.colorCustomizations": {
+    "statusBar.background": "#6cf629",
+    "statusBar.foreground": "#15202b",
+    "statusBarItem.hoverBackground": "#50e20a"
+  },
+  "peacock.color": "#6cf629",
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "typescript.format.insertSpaceAfterFunctionKeywordForAnonymousFunctions": false
+}
