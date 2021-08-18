@@ -13,4 +13,6 @@ const eqArrays = (a, b) => {
 };
 
 // TEST CODE
+
 console.log(assertEqual(eqArrays([1, 2, 3], [1, 2, 3]), true));
+console.log(eqArrays(['1', '2', '3'], ['1', '2', 3]));
