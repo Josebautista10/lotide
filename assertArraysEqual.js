@@ -7,8 +7,6 @@ const eqArrays = (a, b) => {
   );
 };
 
-const assertArraysEqual = (a, b) => {
-  return eqArrays(a, b);
-};
+export const assertArraysEqual = (a, b) => eqArrays(a, b)
 
 console.log(`The input you entered is ${assertArraysEqual([1],[1])} ✅`);
