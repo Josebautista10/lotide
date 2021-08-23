@@ -1,8 +1,3 @@
-const assertEqual = (actual, expected) => {
-  return actual === expected
-    ? `✅✅✅  Assertion Passed: ${actual} === ${expected}`
-    : `❌❌❌ Assertion Failed: ${actual} !== ${expected}`;
-};
 const eqArrays = (a, b) => {
   return (
     Array.isArray(a) &&
@@ -12,7 +7,4 @@ const eqArrays = (a, b) => {
   );
 };
 
-// TEST CODE
-
-console.log(assertEqual(eqArrays([1, 2, 3], [1, 2, 3]), true));
-console.log(eqArrays(['1', '2', '3'], ['1', '2', 3]));
+module.exports = eqArrays;
