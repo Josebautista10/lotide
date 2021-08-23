@@ -7,16 +7,36 @@ const eqArrays = (a, b) => {
   );
 };
 
-const eqObjects = (object1, object2) => {
-  let arr1 = Object.entries(object1).flat(10).sort();
-  let arr2 = Object.entries(object2).flat(10).sort();
+const isObject = (obj) => {
+  return (typeof obj === 'object' && !Array.isArray(obj))
+}
 
-  return eqArrays(arr1, arr2);
+const eqObjects = (object1, object2) => {
+  const keys1 = Object.keys(object1)
+  const keys2 = Object.keys(object2)
+
+
+  if (keys1.length !== keys2.length) {
+    return false 
+  } 
+  for (const key of keys1 ) {
+    if (Array.isArray(object1[key]) && Array.isArray(object2[key])) {
+      if (!eqArrays(object1[key], object2[key])) {
+        return false
+      }
+    } else if (isObject(object1[key]) && isObject(object2[key])) {
+      if (!eqObjects(object1[key], object2[key])) {
+        return false
+      }
+    } else if (object1[key] !== object2[key]) {
+      return false
+    }
+  }
+  return true
 };
 
-const cd = { c: '1', d: ['2', 3] };
-const dc = { d: ['2', 3], c: '1' };
-console.log(eqObjects(cd, dc));
+console.log(eqObjects({ a: { z: 1 }, b: 2 }, { a: { z: 1 }, b: 2 }));
 
-const cd2 = { c: '1', d: ['2', 3, 4] };
-console.log(eqObjects(cd, cd2));
+console.log(eqObjects({ a: { y: 0, z: 1 }, b: 2 }, { a: { z: 1 }, b: 2 }) );
+
+console.log(eqObjects({ a: { y: 0, z: 1 }, b: 2 }, { a: 1, b: 2 }));

@@ -1,9 +1,0 @@
-{
-  "name": "lotide",
-  "version": "1.0.0",
-  "main": "index.js",
-  "repository": "git@github.com:Josebautista10/lotide.git",
-  "author": "Jose Bautista <Cooldj1020@gmail.com>",
-  "license": "MIT",
-  "type": "module"
-}

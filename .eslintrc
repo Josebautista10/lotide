@@ -1,9 +1,0 @@
-// .eslintrc.modules.json
-{
-  
-  "parserOptions": {
-      "sourceType": "module",
-      "ecmaVersion": "latest"
-
-  }
-}
